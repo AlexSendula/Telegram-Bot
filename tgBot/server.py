@@ -1,5 +1,5 @@
-from bot import telegram_chatbot
-import messageHandler
+from main.bot import telegram_chatbot
+from main import messageHandler
 
 bot = telegram_chatbot("config.cfg")
 

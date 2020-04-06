@@ -1,6 +1,5 @@
-crontabHandler = __import__('handlers.crontabHandler')
-test = __import__('temp.test')
-
+from tgBot.handlers import crontabHandler
+from tgBot.temp import test
 
 def main(msg):
     response = ''
