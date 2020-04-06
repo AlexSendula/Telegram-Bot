@@ -1,5 +1,5 @@
-test = __import__('temp.test')
 crontabHandler = __import__('handlers.crontabHandler')
+test = __import__('temp.test')
 
 
 def main(msg):
