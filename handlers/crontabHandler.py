@@ -25,7 +25,7 @@ def main(msg):
         if y[0] == msg[1]:
             cmd = y[1]
             job = cron.new(command=cmd)
-            job.setall(str(y[3]))
+            job.setall(str(y[2]))
             cron.write()
             result = 'succes'
             return result

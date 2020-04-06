@@ -1,4 +1,3 @@
-import sys
 from bot import telegram_chatbot
 import messageHandler
 
