@@ -2,8 +2,8 @@ import bs4 as bs
 import urllib.request
 import requests
 
-msg =''
 bot = 'https://api.telegram.org/bot1160110586:AAGq6npXmn839dWitkAvA-KSZYvisgdvFLc/sendMessage?text={}&chat_id=680658091'
+
 
 # Web-scraper
 def main():
@@ -29,10 +29,8 @@ def main():
 
     # On condition publish
     if brow[1] != 'niet op voorraad':
-        msg = 'Toilet papier op voorraad'
+        msg = 'Makro toilet papier bijgevuld!'
         requests.get(bot.format(msg))
-    else:
-        msg1 = 'Niet op voorraad'
-        requests.get(bot.format(msg1))
+
 
 main()
