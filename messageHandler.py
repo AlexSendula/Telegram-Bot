@@ -1,5 +1,5 @@
-from tgBot.handlers import crontabHandler
-from tgBot.temp import test
+from .handlers import crontabHandler
+from temp import test
 
 def main(msg):
     response = ''
