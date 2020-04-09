@@ -1,7 +1,7 @@
 from crontab import CronTab
 
 cronjobs = []
-f = open('cronjobs.txt', 'r')
+f = open('handlers/cronjobs.txt', 'r')
 x = f.readlines()
 for i in x:
     i = i[:-1]
@@ -13,12 +13,13 @@ def main(msg):
     msg = msg.split()
     cron = CronTab(user=True)
     # Check if job is active => disable
+    cmd = cron.find_command(command=msg[1])
     for z in cron:
-        if z == msg[1]:
-            cmd = cron.find_command(msg[1])
+        z = str(z)
+        if z.find(msg[1]) > -1:
             cron.remove(cmd)
             cron.write()
-            result = 'Cron {} disabled'.format(msg[0])
+            result = "Cronjob is '{}' disabled.".format(msg[1])
             return result
     # Check if job exists in job list => enable
     for y in cronjobs:
@@ -27,7 +28,7 @@ def main(msg):
             job = cron.new(command=cmd)
             job.setall(str(y[2]))
             cron.write()
-            result = 'succes'
+            result = 'Cronjob {} enabled.'.format(msg[1])
             return result
 
     result = 'Try again...'
