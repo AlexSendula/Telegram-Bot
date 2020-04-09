@@ -1,10 +1,12 @@
-from .handlers import crontabHandler
-from temp import test
+from handlers import crontabHandler
+from temp import test, temp
 
 def main(msg):
     response = ''
 
-    if msg[0:5].lower() == 'cron ':
+    if msg[0:6] == '/cron ':
         return crontabHandler.main(msg)
-    elif msg.lower() == 'hi':
+    elif msg == '/hi':
         return test.main()
+    elif msg == 'test':
+        return temp.crondel(msg)

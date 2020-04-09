@@ -4,16 +4,12 @@ import messageHandler
 bot = telegram_chatbot("config.cfg")
 
 
-def send_msg(msg):
-    return msg
-
-
 def make_reply(msg):
     reply = None
     if msg is not None:
+        msg = msg.lower()
         reply = messageHandler.main(msg)
     return reply
-
 
 update_id = None
 while True:
