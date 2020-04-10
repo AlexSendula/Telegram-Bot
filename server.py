@@ -11,6 +11,7 @@ def make_reply(msg):
         reply = messageHandler.main(msg)
     return reply
 
+
 update_id = None
 while True:
     updates = bot.get_updates(offset=update_id)
@@ -25,3 +26,14 @@ while True:
             from_ = item["message"]["from"]["id"]
             reply = make_reply(message)
             bot.send_message(reply, from_)
+
+# Make a class with a function where in you can construct the connected users.
+# Then when running a script, call the right instance of the users and send that specific user the message
+#
+# What is needed for this?
+# - Users class
+# - Instance users
+# - Class method:
+#   - Get user data
+#   - Get message data
+#   - Send message data

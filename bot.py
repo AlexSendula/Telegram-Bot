@@ -25,3 +25,4 @@ class telegram_chatbot():
         parser = cfg.ConfigParser()
         parser.read(config)
         return parser.get('creds', 'token')
+
